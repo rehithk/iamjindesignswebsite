@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>I AM JIN DESIGNS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Custom CSS with I AM JIN DESIGNS theme */
+        :root {
+            --primary-color: #17283a;
+            --primary-light: #2a3f56;
+            --primary-dark: #0d1a26;
+            --accent-color: #f39c12;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f8f9fa;
+            --gradient: linear-gradient(45deg, #17283a, #2a3f56);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--primary-color) !important;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(23, 40, 58, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 1.8rem;
+            color: var(--text-light) !important;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin: 0 1rem;
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover,
+        .nav-item.active .nav-link {
+            color: var(--accent-color) !important;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar-toggler {
+            background: none;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero-slider {
+            height: 100vh;
+            background: var(--gradient);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--text-light);
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        /* Hero Background Pattern */
+        .hero-slider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
+            opacity: 0.3;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(23, 40, 58, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-text .subheading {
+            color: var(--accent-color);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-image {
+            background: var(--gradient);
+            height: 400px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 250px;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(23, 40, 58, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--primary-light);
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary-color);
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .navbar-nav.active {
+                display: flex;
+            }
+
+            .nav-item {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile-first cool animations */
+            .service-card {
+                transform: scale(0.95);
+                animation: mobileSlideIn 0.6s ease forwards;
+            }
+
+            .service-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .service-card:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+
+            @keyframes mobileSlideIn {
+                to {
+                    transform: scale(1);
+                }
+            }
+
+            .project-card {
+                animation: mobileCardPop 0.5s ease forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            .project-card:nth-child(even) {
+                animation-delay: 0.3s;
+            }
+
+            @keyframes mobileCardPop {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        /* Navbar mobile toggle */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#home">I AM JIN DESIGNS</a>
+            <button class="mobile-nav-toggle" onclick="toggleMobileNav()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-slider">
+        <div class="container">
+            <div class="hero-content">
+                <h1>We Create Amazing Interior Designs</h1>
+                <p>Transform your space with our innovative interior design solutions. We bring creativity, functionality, and style to every project, creating spaces that reflect your personality and lifestyle.</p>
+                <a href="#projects" class="btn-primary">View Our Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive interior design services tailored to your unique needs and vision.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Perfectly Design</h3>
+                    <p>We create stunning interior designs that perfectly balance aesthetics, functionality, and your personal style to bring your vision to life.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Carefully Planned</h3>
+                    <p>Every project is meticulously planned with attention to detail, ensuring seamless execution from concept to completion.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Smartly Execute</h3>
+                    <p>Our expert team executes each design with precision and professionalism, delivering exceptional results on time and within budget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image animate-on-scroll"></div>
+                <div class="about-text animate-on-scroll">
+                    <span class="subheading">About</span>
+                    <h2>We are the best Interior Design Consultants</h2>
+                    <p>At I AM JIN DESIGNS, we believe that great interior design is about more than just making spaces look beautiful. It's about creating environments that enhance your daily life, reflect your personality, and support your lifestyle.</p>
+                    <p>With years of experience and a passion for innovative design, our team works closely with each client to understand their unique vision and transform it into reality. From residential homes to commercial spaces, we bring creativity and expertise to every project.</p>
+                    <a href="#contact" class="btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Our Projects</h2>
+                <p>Explore our portfolio of stunning interior design projects that showcase our creativity and expertise.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Modern Living Room Design</h3>
+                        <p>Contemporary living space with clean lines and sophisticated color palette.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Luxury Bedroom Suite</h3>
+                        <p>Elegant bedroom design featuring premium materials and thoughtful lighting.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Contemporary Kitchen</h3>
+                        <p>Functional and stylish kitchen with modern appliances and smart storage solutions.</p>
+                    </div>
+                </div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Office Space Design</h3>
+                        <p>Professional workspace that promotes productivity and employee well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>I AM JIN DESIGNS</h3>
+                    <p>Creating beautiful, functional spaces that reflect your unique style and enhance your daily life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Interior Design</a></li>
+                        <li><a href="#">Space Planning</a></li>
+                        <li><a href="#">Color Consultation</a></li>
+                        <li><a href="#">Furniture Selection</a></li>
+                        <li><a href="#">Project Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #f39c12;"></i>
+                            123 Design Street, Creative City, CC 12345
+                        </li>
+                        <li style="margin-bottom: 1rem;">
+                            <i class="fas fa-phone" style="margin-right: 10px; color: #f39c12;"></i>
+                            +1 (555) 123-4567
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" style="margin-right: 10px; color: #f39c12;"></i>
+                            hello@iamjindesigns.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 I AM JIN DESIGNS. All rights reserved. | Crafted with passion for beautiful interiors.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        function toggleMobileNav() {
+            const nav = document.getElementById('navbarNav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile nav after clicking
+                document.getElementById('navbarNav').classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Active navigation state
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-item');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.querySelector('a').getAttribute('href').includes(current)) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(23, 40, 58, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.background = 'var(--primary-color)';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.getElementById('navbarNav');
+            const toggle = document.querySelector('.mobile-nav-toggle');
+
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
