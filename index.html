@@ -5,8 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <style>
@@ -536,6 +542,7 @@
             background: none;
             border: none;
             color: var(--text-light);
+            color:#ceb27c;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -564,7 +571,18 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#home">I AM JIN DESIGNS</a>
+            <a class="navbar-brand" href="#home" style="display: flex; align-items: center; gap: 10px;">
+              <img src="i-am-jin-logo-cleaned.svg" alt="AM JIN Logo" style="height: 80px;" />
+              <span style="
+                font-family: 'Playfair Display', 'Poppins', sans-serif;
+                font-size: clamp(20px, 6vw, 30px);
+                letter-spacing: 1.5px;
+                color: #ceb27c;
+                font-weight: 600;
+              ">
+                I AM JIN DESIGNS
+              </span>
+            </a>
             <button class="mobile-nav-toggle" onclick="toggleMobileNav()">
                 <i class="fas fa-bars"></i>
             </button>
@@ -572,14 +590,14 @@
                 <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Our Process</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-slider">
+    <!-- <section id="home" class="hero-slider">
         <div class="container">
             <div class="hero-content">
                 <h1>We Create Amazing Interior Designs</h1>
@@ -587,46 +605,97 @@
                 <a href="#projects" class="btn-primary">View Our Works</a>
             </div>
         </div>
+    </section> -->
+    <section id="home" class="hero-slider" style="
+      background-image: url('background-picture.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 100px 0;
+    ">
+      <div class="container">
+        <div class="hero-content">
+          <h1>We Create Amazing Interior Designs</h1>
+          <p>Transform your space with our innovative interior design solutions. We bring creativity, functionality, and style to every project, creating spaces that reflect your personality and lifestyle.</p>
+          <a href="#projects" class="btn-primary">View Our Works</a>
+        </div>
+      </div>
     </section>
 
+
     <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>Our Services</h2>
-                <p>We offer comprehensive interior design services tailored to your unique needs and vision.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Perfectly Design</h3>
-                    <p>We create stunning interior designs that perfectly balance aesthetics, functionality, and your personal style to bring your vision to life.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-compass"></i>
-                    </div>
-                    <h3>Carefully Planned</h3>
-                    <p>Every project is meticulously planned with attention to detail, ensuring seamless execution from concept to completion.</p>
-                </div>
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Smartly Execute</h3>
-                    <p>Our expert team executes each design with precision and professionalism, delivering exceptional results on time and within budget.</p>
-                </div>
-            </div>
+
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header animate-on-scroll">
+      <h2>Our Process</h2>
+      <p>We follow a thoughtful, personalized design journey to bring your dream space to life.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <i class="fas fa-user-check"></i>
         </div>
-    </section>
+        <h3>1. Understanding You</h3>
+        <p>We begin by getting to know you—your needs, preferences, lifestyle, and vision for the space. We also study your site, floor plans, budget, and timeline to build the right foundation.</p>
+      </div>
+
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <i class="fas fa-drafting-compass"></i>
+        </div>
+        <h3>2. Planning the Layout</h3>
+        <p>Based on our discussions, we create floor plans, furniture layouts, and structural suggestions. We also share a clear design scope and fee for approval.</p>
+      </div>
+
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3>3. Design Concept</h3>
+        <p>We present mood boards, design ideas, and reference images to help you visualize the space. Your feedback helps us refine the concept and estimate the budget.</p>
+      </div>
+
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <i class="fas fa-pencil-ruler"></i>
+        </div>
+        <h3>4. Design Details</h3>
+        <p>After finalizing the concept, we create technical drawings and a detailed material list covering furniture, electricals, plumbing, and more.</p>
+      </div>
+
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <i class="fas fa-hard-hat"></i>
+        </div>
+        <h3>5. Execution & Supervision</h3>
+        <p>Our team supervises the site to ensure timely progress, quality work, and smooth coordination. You stay updated every step of the way.</p>
+      </div>
+
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>6. Final Touch & Handover</h3>
+        <p>We add the final styling, inspect every detail, and hand over a beautiful, finished space—just as you imagined, or even better.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
             <div class="about-content">
-                <div class="about-image animate-on-scroll"></div>
+                <div class="about-image animate-on-scroll">
+                  <img src="about.jpg"
+                      alt="Luxury Interior Concept"
+                      style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);" />
+                </div>
+
                 <div class="about-text animate-on-scroll">
                     <span class="subheading">About</span>
                     <h2>We are the best Interior Design Consultants</h2>
@@ -645,51 +714,87 @@
                 <h2>Our Projects</h2>
                 <p>Explore our portfolio of stunning interior design projects that showcase our creativity and expertise.</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Modern Living Room Design</h3>
-                        <p>Contemporary living space with clean lines and sophisticated color palette.</p>
-                    </div>
+            <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+
+              <!-- Video 2 -->
+              <div class="project-video-card animate-on-scroll" style="text-align: center;">
+                <iframe
+                  src="https://www.youtube.com/embed/b-It8ak5c2w"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width: 100%; height: 200px; border-radius: 12px;">
+                </iframe>
+                <p style="margin-top: 10px; color: #fff;">Minimalist Bedroom Setup</p>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="project-video-card animate-on-scroll" style="text-align: center;">
+                <iframe
+                  src="https://www.youtube.com/embed/MLGeUhjd7m4"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width: 100%; height: 200px; border-radius: 12px;">
+                </iframe>
+                <p style="margin-top: 10px; color: #fff;">Modern Kitchen Reveal</p>
+              </div>
+
+              <!-- Video 4 -->
+              <div class="project-video-card animate-on-scroll" style="text-align: center;">
+                <iframe
+                  src="https://www.youtube.com/embed/ek6U2YiMFoI"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width: 100%; height: 200px; border-radius: 12px;">
+                </iframe>
+                <p style="margin-top: 10px; color: #fff;">Cozy Workspace Makeover</p>
+              </div>
+
+              <!-- Video 5 -->
+              <div class="project-video-card animate-on-scroll" style="text-align: center;">
+                <iframe
+                  src="https://www.youtube.com/embed/EhBuGDxgDIo"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width: 100%; height: 200px; border-radius: 12px;">
+                </iframe>
+                <p style="margin-top: 10px; color: #fff;">Luxury Bathroom Design</p>
+              </div>
+
+              <!-- Video 6 -->
+              <div class="project-video-card animate-on-scroll" style="text-align: center;">
+                <iframe
+                  src="https://www.youtube.com/embed/Qv1balF9ihE"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="width: 100%; height: 200px; border-radius: 12px;">
+                </iframe>
+                <p style="margin-top: 10px; color: #fff;">Luxury Bathroom Design</p>
+              </div>
+
+              <!-- Project 7 -->
+               <div class="project-video-card animate-on-scroll" style="text-align: center; margin-bottom: 30px;">
+                  <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden;">
+                    <iframe
+                      src="https://www.youtube.com/embed/ZZGRsnjjo5s"
+                      title="Interior Design Short"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    </iframe>
+                  </div>
+                  <p style="margin-top: 12px; color: #fff; font-family: 'Poppins', sans-serif; font-size: 1rem;">
+                    Interior Design Short
+                  </p>
                 </div>
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Luxury Bedroom Suite</h3>
-                        <p>Elegant bedroom design featuring premium materials and thoughtful lighting.</p>
-                    </div>
-                </div>
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Contemporary Kitchen</h3>
-                        <p>Functional and stylish kitchen with modern appliances and smart storage solutions.</p>
-                    </div>
-                </div>
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <i class="fas fa-eye" style="color: white; font-size: 2rem;"></i>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Office Space Design</h3>
-                        <p>Professional workspace that promotes productivity and employee well-being.</p>
-                    </div>
-                </div>
+
+
+            </div>
             </div>
         </div>
     </section>
@@ -714,10 +819,9 @@
                         <i class="fab fa-linkedin-in"></i>
                       </a>
 
-                        <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
                     </div>
                 </div>
-                <div class="footer-section">
+                <!-- <div class="footer-section">
                     <h3>Services</h3>
                     <ul>
                         <li><a href="#">Interior Design</a></li>
@@ -726,17 +830,7 @@
                         <li><a href="#">Furniture Selection</a></li>
                         <li><a href="#">Project Management</a></li>
                     </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+                </div> -->
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <ul style="list-style: none;">
@@ -751,7 +845,7 @@
                         </li>
                         <li>
                             <i class="fas fa-envelope" style="margin-right: 10px; color: #f39c12;"></i>
-                            hello@iamjindesigns.com
+                            mailtovsjithin@gmail.com
                         </li>
                     </ul>
                 </div>
