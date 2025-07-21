@@ -40,6 +40,12 @@
             padding: 0 15px;
         }
 
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         /* Navigation */
         .navbar {
             background: var(--primary-color) !important;
@@ -82,16 +88,61 @@
 
         .nav-link:hover,
         .nav-item.active .nav-link {
-            color: var(--accent-color) !important;
-            background: rgba(255, 255, 255, 0.1);
+          color: var(--accent-color) !important;
+          background: rgba(255, 255, 255, 0.1);
         }
 
         .navbar-toggler {
-            background: none;
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-            padding: 0.5rem;
-            border-radius: 5px;
+          background: none;
+          border: 2px solid var(--text-light);
+          color: var(--text-light);
+          padding: 0.5rem;
+          border-radius: 5px;
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .container {
+              position: relative;
+          }
+
+          .navbar-toggler {
+              display: block;
+          }
+
+          .navbar-nav {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(23, 40, 58, 0.3);
+            flex-direction: column;
+            min-width: 200px;
+            transform: translateY(-10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 1rem 0;
+          }
+
+          .navbar-nav.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+          }
+
+          .nav-item {
+            margin: 0;
+            width: 100%;
+          }
+
+          .nav-link {
+            display: block;
+            padding: 1rem 1.5rem;
+            width: 100%;
+            border-radius: 0;
+          }
         }
 
         /* Hero Section */
@@ -651,10 +702,19 @@
                     <h3>I AM JIN DESIGNS</h3>
                     <p>Creating beautiful, functional spaces that reflect your unique style and enhance your daily life.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="https://www.instagram.com/amjindesigns?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+
+                      <a href="https://www.youtube.com/@amjindesigns" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>
+                      </a>
+
+                      <a href="https://www.linkedin.com/company/amjin-designs" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+
+                        <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
                     </div>
                 </div>
                 <div class="footer-section">
@@ -682,11 +742,12 @@
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 1rem;">
                             <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #f39c12;"></i>
-                            123 Design Street, Creative City, CC 12345
+                            Amrutha nagar, Choodasandra, Bangalore,560035
                         </li>
                         <li style="margin-bottom: 1rem;">
                             <i class="fas fa-phone" style="margin-right: 10px; color: #f39c12;"></i>
-                            +1 (555) 123-4567
+                            7994535091,
+                            9206596084
                         </li>
                         <li>
                             <i class="fas fa-envelope" style="margin-right: 10px; color: #f39c12;"></i>
