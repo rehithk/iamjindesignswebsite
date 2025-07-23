@@ -18,14 +18,14 @@
     <style>
         /* Custom CSS with I AM JIN DESIGNS theme */
         :root {
-            --primary-color: #17283a;
+            --primary-color: #14222F;
             --primary-light: #2a3f56;
             --primary-dark: #0d1a26;
             --accent-color: #f39c12;
             --text-light: #ffffff;
             --text-dark: #333333;
             --bg-light: #f8f9fa;
-            --gradient: linear-gradient(45deg, #17283a, #2a3f56);
+            --gradient: linear-gradient(45deg, #14222F, #2a3f56);
         }
 
         * {
@@ -572,7 +572,7 @@
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#home" style="display: flex; align-items: center; gap: 10px;">
-              <img src="i-am-jin-logo-cleaned.svg" alt="AM JIN Logo" style="height: 80px;" />
+              <img src="background.svg" alt="AM JIN Logo" style="height: 80px;" />
               <span style="
                 font-family: 'Playfair Display', 'Poppins', sans-serif;
                 font-size: clamp(20px, 6vw, 30px);
@@ -588,24 +588,14 @@
             </button>
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Our Process</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <!-- <section id="home" class="hero-slider">
-        <div class="container">
-            <div class="hero-content">
-                <h1>We Create Amazing Interior Designs</h1>
-                <p>Transform your space with our innovative interior design solutions. We bring creativity, functionality, and style to every project, creating spaces that reflect your personality and lifestyle.</p>
-                <a href="#projects" class="btn-primary">View Our Works</a>
-            </div>
-        </div>
-    </section> -->
     <section id="home" class="hero-slider" style="
       background-image: url('background-picture.png');
       background-size: cover;
@@ -684,28 +674,38 @@
   </div>
 </section>
 
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image animate-on-scroll">
+        <img src="about.jpg"
+             alt="Luxury Interior Concept"
+             style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);" />
+      </div>
+
+      <div class="about-text animate-on-scroll" style="max-width: 700px; margin: auto;">
+        <span class="subheading">About Us</span>
+        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Welcome to I AM JIN DESIGNS</h2>
+        <p style="font-size: 1.25rem; font-style: italic; color: #555; margin-bottom: 2rem;">
+          Where every space tells your story.
+        </p>
+
+        <!-- <p>Welcome to I AM JIN DESIGNS</p> -->
+        <!-- <p>Where every space tells your story</p> -->
+        <p>At I Am Jin Designs we open the door to a world where creativity meets comfort Where your space is reimagined with style soul and substance</p>
+        <p>Founded and run by a passionate designer couple our studio is built on a shared love for interiors and a deep belief in the power of thoughtful design Every project we take on is personal it's not just about how it looks but how it feels</p>
+        <p>Rooted in our philosophy “Line to Luxury” we approach each space as a journey from the first sketch to the final touch Whether you're working with a modest budget or dreaming of luxury we give every detail the same level of dedication creativity and care</p>
+        <p>From contemporary elegance to timeless classics from bold statements to minimalist calm we design to reflect you Trends inspire us but your lifestyle leads the way</p>
+        <p>At I Am Jin Designs we don’t just decorate rooms we craft meaningful spaces with warmth character and a timeless charm you’ll love coming home to</p>
+
+        <a href="#contact" class="btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-image animate-on-scroll">
-                  <img src="about.jpg"
-                      alt="Luxury Interior Concept"
-                      style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);" />
-                </div>
-
-                <div class="about-text animate-on-scroll">
-                    <span class="subheading">About</span>
-                    <h2>We are the best Interior Design Consultants</h2>
-                    <p>At I AM JIN DESIGNS, we believe that great interior design is about more than just making spaces look beautiful. It's about creating environments that enhance your daily life, reflect your personality, and support your lifestyle.</p>
-                    <p>With years of experience and a passion for innovative design, our team works closely with each client to understand their unique vision and transform it into reality. From residential homes to commercial spaces, we bring creativity and expertise to every project.</p>
-                    <a href="#contact" class="btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
@@ -804,8 +804,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>I AM JIN DESIGNS</h3>
-                    <p>Creating beautiful, functional spaces that reflect your unique style and enhance your daily life.</p>
+                    <h3>Connect With Us</h3>
                     <div class="social-links">
                       <a href="https://www.instagram.com/amjindesigns?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-instagram"></i>
@@ -815,6 +814,10 @@
                         <i class="fab fa-youtube"></i>
                       </a>
 
+                      <a href="https://www.facebook.com/share/1ApQ8YFouM/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+
                       <a href="https://www.linkedin.com/company/amjin-designs" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                       </a>
@@ -822,13 +825,13 @@
                     </div>
                 </div>
                 <!-- <div class="footer-section">
-                    <h3>Services</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Interior Design</a></li>
-                        <li><a href="#">Space Planning</a></li>
-                        <li><a href="#">Color Consultation</a></li>
-                        <li><a href="#">Furniture Selection</a></li>
-                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div> -->
                 <div class="footer-section">
