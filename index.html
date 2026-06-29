@@ -652,8 +652,13 @@
 
         .projects-track {
             display: flex;
-            gap: 2rem;
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projects-page {
+            flex: 0 0 100%;
+            display: flex;
+            gap: 2rem;
         }
 
         .projects-arrow {
@@ -703,7 +708,8 @@
         }
 
         .project-video-card {
-            flex: 0 0 calc((100% - 2rem) / 2);
+            flex: 1;
+            min-width: 0;
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 14px;
@@ -854,6 +860,10 @@
                 padding: 1rem;
             }
 
+            .hero-slider::before {
+                background: linear-gradient(180deg, rgba(13, 26, 38, 0.92) 0%, rgba(13, 26, 38, 0.82) 40%, rgba(13, 26, 38, 0.78) 70%, rgba(13, 26, 38, 0.88) 100%);
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
                 letter-spacing: 0;
@@ -884,12 +894,15 @@
                 margin-bottom: 2.5rem;
             }
 
-            .project-video-card {
-                flex: 0 0 calc((100% - 1rem) / 2);
+            .projects-page {
+                flex-direction: column;
+                gap: 1.25rem;
             }
 
-            .projects-track {
-                gap: 1rem;
+            .project-video-card {
+                border: none;
+                background: transparent;
+                padding: 0;
             }
 
             .projects-arrow {
@@ -1127,8 +1140,8 @@
     <div class="about-content">
       <div class="about-text animate-on-scroll">
         <span class="subheading">About Us</span>
-        <h2 class="about-tagline">Where every space tells your story.</h2>
-
+        <h4 class="about-tagline">I AM JIN DESIGNS</h4>
+        <p>Where every space tells your story.</p>
         <div class="about-slider" id="aboutSlider">
           <div class="about-slider-row">
             <button class="about-arrow about-arrow-prev" id="aboutPrev" aria-label="Previous">&#8249;</button>
@@ -1182,60 +1195,57 @@
               <div class="projects-slider">
                 <div class="projects-track" id="projectsTrack">
 
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/b-It8ak5c2w" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  <div class="projects-page">
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-h" src="https://www.youtube.com/embed/b-It8ak5c2w" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
+                    </div>
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-h" src="https://www.youtube.com/embed/MLGeUhjd7m4" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/MLGeUhjd7m4" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  <div class="projects-page">
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-h" src="https://www.youtube.com/embed/ek6U2YiMFoI" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
+                    </div>
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-h" src="https://www.youtube.com/embed/EhBuGDxgDIo" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/ek6U2YiMFoI" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  <div class="projects-page">
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-h" src="https://www.youtube.com/embed/Qv1balF9ihE" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
+                    </div>
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-h" src="https://www.youtube.com/embed/ZZGRsnjjo5s" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/EhBuGDxgDIo" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                  <div class="projects-page">
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-v" src="https://www.youtube.com/embed/ZdoBNVHEqsc" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
+                    </div>
+                    <div class="project-video-card">
+                      <div class="yt-frame">
+                        <iframe class="yt-embed-v" src="https://www.youtube.com/embed/jWQowA8mfCc" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                      </div>
                     </div>
                   </div>
-
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/Qv1balF9ihE" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                  </div>
-
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/ZZGRsnjjo5s" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                  </div>
-
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-v" src="https://www.youtube.com/embed/ZdoBNVHEqsc" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                  </div>
-
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-v" src="https://www.youtube.com/embed/jWQowA8mfCc" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                  </div>
-
-                  <div class="project-video-card">
-                    <div class="yt-frame">
-                      <iframe class="yt-embed-v" src="https://www.youtube.com/embed/FigPm6KW8ts" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-                    </div>
-                  </div>
-
                 </div>
               </div>
 
@@ -1378,32 +1388,27 @@
             const nextBtn = document.getElementById('projectsNext');
             if (!track || !prevBtn || !nextBtn) return;
 
-            const cards = Array.from(track.children);
+            const pages = Array.from(track.children);
             let index = 0;
 
-            function cardsPerView() {
-                return 2;
-            }
-
             function maxIndex() {
-                return Math.max(0, cards.length - cardsPerView());
+                return pages.length - 1;
             }
 
             function update() {
-                const cardWidth = cards[0].getBoundingClientRect().width;
-                const gap = parseFloat(getComputedStyle(track).gap) || 0;
-                track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+                const pageWidth = pages[0].getBoundingClientRect().width;
+                track.style.transform = `translateX(-${index * pageWidth}px)`;
                 prevBtn.disabled = index === 0;
                 nextBtn.disabled = index >= maxIndex();
             }
 
             function next() {
-                index = Math.min(maxIndex(), index + cardsPerView());
+                index = Math.min(maxIndex(), index + 1);
                 update();
             }
 
             function prev() {
-                index = Math.max(0, index - cardsPerView());
+                index = Math.max(0, index - 1);
                 update();
             }
 
