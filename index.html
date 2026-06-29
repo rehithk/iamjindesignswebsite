@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>I AM JIN DESIGNS</title>
+    <title>I AM JIN DESIGNS | Interior Designers in Bangalore</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="I Am Jin Designs is a Bangalore-based interior design studio crafting personalized homes and workspaces, from concept to final handover. Line to Luxury.">
+    <meta name="theme-color" content="#14222F">
+    <link rel="icon" href="background.svg" type="image/svg+xml">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="I AM JIN DESIGNS | Interior Designers in Bangalore">
+    <meta property="og:description" content="Personalized interior design, from concept to final handover. Line to Luxury.">
+    <meta property="og:image" content="background-picture.jpg">
+    <meta property="og:type" content="website">
 
 <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -21,11 +27,13 @@
             --primary-color: #14222F;
             --primary-light: #2a3f56;
             --primary-dark: #0d1a26;
-            --accent-color: #f39c12;
+            --accent-color: #c9a876;
+            --accent-dark: #a8854f;
             --text-light: #ffffff;
             --text-dark: #333333;
+            --text-muted: #6b7280;
             --bg-light: #f8f9fa;
-            --gradient: linear-gradient(45deg, #14222F, #2a3f56);
+            --gradient: linear-gradient(135deg, #14222F, #2a3f56);
         }
 
         * {
@@ -35,8 +43,9 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
             color: var(--text-dark);
         }
 
@@ -65,11 +74,37 @@
         }
 
         .navbar-brand {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             color: var(--text-light) !important;
             text-decoration: none;
-            font-weight: bold;
+        }
+
+        .navbar-logo-img {
+            height: 80px;
+            flex-shrink: 0;
+        }
+
+        .navbar-logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(15px, 4vw, 24px);
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-logo-img {
+                height: 56px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-logo-img {
+                height: 40px;
+            }
         }
 
         .navbar-nav {
@@ -87,33 +122,39 @@
             color: var(--text-light) !important;
             text-decoration: none;
             font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
             transition: color 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            padding: 0.5rem 0.25rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0.25rem;
+            right: 0.25rem;
+            bottom: -2px;
+            height: 1px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
         .nav-link:hover,
         .nav-item.active .nav-link {
           color: var(--accent-color) !important;
-          background: rgba(255, 255, 255, 0.1);
         }
 
-        .navbar-toggler {
-          background: none;
-          border: 2px solid var(--text-light);
-          color: var(--text-light);
-          padding: 0.5rem;
-          border-radius: 5px;
-          display: none;
+        .nav-link:hover::after,
+        .nav-item.active .nav-link::after {
+          transform: scaleX(1);
         }
 
         @media (max-width: 768px) {
           .container {
               position: relative;
-          }
-
-          .navbar-toggler {
-              display: block;
           }
 
           .navbar-nav {
@@ -153,12 +194,31 @@
 
         /* Hero Section */
         .hero-slider {
-            height: 100vh;
+            min-height: 100vh;
             background: var(--gradient);
             position: relative;
             display: flex;
             align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero-bg-wrap {
+            position: absolute;
+            inset: 0;
             overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: -10%;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            will-change: transform;
         }
 
         .hero-content {
@@ -169,28 +229,52 @@
             padding: 2rem;
         }
 
-        .hero-content h1 {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 3.5rem;
+        .hero-kicker {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-color);
             margin-bottom: 1rem;
-            line-height: 1.2;
             animation: slideInUp 1s ease-out;
         }
 
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 3.2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+            animation: slideInUp 1s ease-out 0.15s both;
+        }
+
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 2.25rem;
+            opacity: 0.85;
+            max-width: 480px;
             animation: slideInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
             background: var(--accent-color);
-            color: var(--text-light);
-            padding: 15px 30px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
+            color: var(--primary-dark);
+            padding: 15px 36px;
+            border: 1px solid var(--accent-color);
+            border-radius: 2px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
@@ -198,12 +282,33 @@
         }
 
         .btn-primary:hover {
-            background: #e67e22;
+            background: transparent;
+            color: var(--accent-color);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
         }
 
-        /* Hero Background Pattern */
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            padding: 14px 34px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Hero overlay for legibility over photo */
         .hero-slider::before {
             content: '';
             position: absolute;
@@ -211,95 +316,285 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
-            opacity: 0.3;
+            background: linear-gradient(100deg, rgba(13, 26, 38, 0.88) 0%, rgba(13, 26, 38, 0.55) 45%, rgba(13, 26, 38, 0.25) 100%);
+            z-index: 1;
         }
 
         /* Services Section */
         .services-section {
-            padding: 100px 0;
-            background: var(--bg-light);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
+            padding: 80px 0;
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(23, 40, 58, 0.15);
+        .process-stepper {
+            max-width: 680px;
+            margin: 3rem auto 0;
         }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient);
+        .process-step {
+            display: flex;
+            gap: 1.75rem;
+            position: relative;
+            padding-bottom: 3rem;
+        }
+
+        .process-step:last-child {
+            padding-bottom: 0;
+        }
+
+        .process-step-marker {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .process-step:not(:last-child) .process-step-marker::after {
+            content: '';
+            position: absolute;
+            top: 56px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 56px + 3rem);
+            background: #e2e2e2;
+            transition: background 0.4s ease;
+        }
+
+        .process-step.visible:not(:last-child) .process-step-marker::after {
+            background: var(--accent-color);
+        }
+
+        .process-step-number {
+            position: relative;
+            z-index: 2;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
+            background: white;
+            border: 2px solid #e2e2e2;
+            color: var(--accent-dark);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            color: white;
-            font-size: 2rem;
+            font-size: 1.3rem;
+            transform: scale(0.4) rotate(-110deg);
+            transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
         }
 
-        .service-card h3 {
+        .process-step.visible .process-step-number {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-light);
+            animation: stepPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes stepPop {
+            0% { transform: scale(0.4) rotate(-110deg); box-shadow: 0 0 0 0 rgba(201, 168, 118, 0.5); }
+            60% { transform: scale(1.2) rotate(8deg); box-shadow: 0 0 0 10px rgba(201, 168, 118, 0.12); }
+            100% { transform: scale(1.08) rotate(0deg); box-shadow: 0 0 0 14px rgba(201, 168, 118, 0); }
+        }
+
+        .process-step:nth-child(1) .process-step-number { animation-delay: 0s; }
+        .process-step:nth-child(2) .process-step-number { animation-delay: 0.08s; }
+        .process-step:nth-child(3) .process-step-number { animation-delay: 0.16s; }
+        .process-step:nth-child(4) .process-step-number { animation-delay: 0.24s; }
+        .process-step:nth-child(5) .process-step-number { animation-delay: 0.32s; }
+        .process-step:nth-child(6) .process-step-number { animation-delay: 0.4s; }
+
+        .process-step-content {
+            padding-top: 0.5rem;
+        }
+
+        .process-step-content h3 {
+            font-family: 'Montserrat', sans-serif;
             color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .process-step-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
         /* About Section */
         .about-section {
-            padding: 100px 0;
+            padding: 80px 0;
+            background: var(--bg-light);
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .about-text .subheading {
-            color: var(--accent-color);
-            font-size: 1rem;
+            color: var(--accent-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 0.5rem;
         }
 
-        .about-image {
-            background: var(--gradient);
-            height: 400px;
-            border-radius: 15px;
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.1rem;
+        }
+
+        .about-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 2.1rem;
+            line-height: 1.3;
+            color: var(--primary-color);
+            margin: 0 auto 1.5rem;
             position: relative;
-            overflow: hidden;
+            display: block;
+            width: fit-content;
+            padding-bottom: 0.6rem;
+        }
+
+        .about-tagline::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-color);
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            transition: transform 0.7s ease;
+        }
+
+        .about-text.visible .about-tagline::after {
+            transform: translateX(-50%) scaleX(1);
+            transition-delay: 0.3s;
+        }
+
+        .about-text .subheading,
+        .about-text .about-tagline,
+        .about-text .about-slider,
+        .about-text > .btn-primary {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .about-text.visible .subheading {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+
+        .about-text.visible .about-tagline {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.22s;
+        }
+
+        .about-text.visible .about-slider {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.4s;
+        }
+
+        .about-text.visible > .btn-primary {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.6s;
+        }
+
+        .about-slider {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-slider-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+        }
+
+        .about-arrow {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            border: 1px solid #e2e2e2;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+
+        .about-arrow:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-light);
+        }
+
+        .about-slide {
+            display: none;
+            min-height: 115px;
+            animation: fadeInSlide 0.35s ease;
+        }
+
+        .about-slide.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .about-slide p {
+            margin-bottom: 0;
+        }
+
+        .about-slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 0.75rem;
+        }
+
+        .about-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .about-dot.active {
+            background: var(--accent-color);
         }
 
         /* Projects Section */
         .projects-section {
-            padding: 100px 0;
-            background: var(--bg-light);
+            padding: 80px 0;
+            background: var(--gradient);
+        }
+
+        #projects .section-header h2 {
+            color: var(--text-light);
+        }
+
+        #projects .section-header p {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .section-header {
@@ -307,63 +602,138 @@
             margin-bottom: 4rem;
         }
 
+        .section-header .subheading {
+            display: block;
+        }
+
         .section-header h2 {
-            font-family: 'Abril Fatface', cursive;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            height: 250px;
-            background: var(--gradient);
+            margin: 0 auto 1rem;
             position: relative;
-            overflow: hidden;
+            display: block;
+            width: fit-content;
+            padding-bottom: 0.6rem;
         }
 
-        .project-overlay {
+        .section-header h2::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(23, 40, 58, 0.8);
+            left: 50%;
+            bottom: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-color);
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: center;
+            transition: transform 0.7s ease;
+        }
+
+        .section-header.visible h2::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .projects-slider-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .projects-slider {
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .projects-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projects-arrow {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: var(--text-light);
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+            z-index: 3;
         }
 
-        .project-card:hover .project-overlay {
-            opacity: 1;
+        .projects-arrow:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--primary-dark);
         }
 
-        .project-info {
-            padding: 1.5rem;
+        .projects-arrow:disabled {
+            opacity: 0.3;
+            cursor: default;
         }
 
-        .project-info h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+        .projects-arrow:disabled:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.25);
+            color: var(--text-light);
+        }
+
+        .project-video-card {
+            flex: 0 0 calc((100% - 2 * 2rem) / 3);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-video-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-color);
+        }
+
+        .yt-frame {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--primary-dark);
+        }
+
+        .yt-frame iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0;
+        }
+
+        .yt-frame .yt-embed-h {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .yt-frame .yt-embed-v {
+            height: 100%;
+            aspect-ratio: 9 / 16;
         }
 
         /* Footer */
@@ -381,8 +751,9 @@
         }
 
         .footer-section h3 {
-            font-family: 'Abril Fatface', cursive;
-            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             color: var(--accent-color);
         }
@@ -447,11 +818,6 @@
             }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .navbar-nav {
@@ -481,54 +847,90 @@
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                letter-spacing: 0;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .hero-content p {
+                max-width: none;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-cta-group .btn-primary,
+            .hero-cta-group .btn-outline {
                 text-align: center;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .hero-slider,
+            .services-section,
+            .about-section,
+            .projects-section {
+                padding: 56px 0;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .section-header {
+                margin-bottom: 2.5rem;
             }
 
-            /* Mobile-first cool animations */
-            .service-card {
-                transform: scale(0.95);
-                animation: mobileSlideIn 0.6s ease forwards;
+            .project-video-card {
+                flex: 0 0 100%;
             }
 
-            .service-card:nth-child(2) {
+            .projects-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 1.3rem;
+            }
+
+            .about-slider-row {
+                gap: 0.5rem;
+            }
+
+            .about-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 1.2rem;
+            }
+
+            .about-slide {
+                min-height: 230px;
+            }
+
+            .process-step {
+                gap: 1rem;
+                padding-bottom: 2.25rem;
+            }
+
+            .process-step-number {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+
+            .process-step:not(:last-child) .process-step-marker::after {
+                top: 44px;
+                height: calc(100% - 44px + 2.25rem);
+            }
+
+            .project-video-card {
+                opacity: 0;
+                transform: translateY(16px);
+                animation: mobileFadeUp 0.6s ease forwards;
+            }
+
+            .project-video-card:nth-child(2) {
+                animation-delay: 0.1s;
+            }
+
+            .project-video-card:nth-child(3) {
                 animation-delay: 0.2s;
             }
 
-            .service-card:nth-child(3) {
-                animation-delay: 0.4s;
-            }
-
-            @keyframes mobileSlideIn {
-                to {
-                    transform: scale(1);
-                }
-            }
-
-            .project-card {
-                animation: mobileCardPop 0.5s ease forwards;
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            .project-card:nth-child(even) {
-                animation-delay: 0.3s;
-            }
-
-            @keyframes mobileCardPop {
+            @keyframes mobileFadeUp {
                 to {
                     opacity: 1;
                     transform: translateY(0);
@@ -536,15 +938,47 @@
             }
         }
 
-        /* Navbar mobile toggle */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .project-video-card {
+                flex: 0 0 calc((100% - 2rem) / 2);
+            }
+        }
+
+        /* Navbar mobile toggle - drawn in CSS so it never depends on an icon font loading */
         .mobile-nav-toggle {
             display: none;
+            width: 28px;
+            height: 20px;
             background: none;
             border: none;
-            color: var(--text-light);
-            color:#ceb27c;
-            font-size: 1.5rem;
+            padding: 0;
             cursor: pointer;
+            position: relative;
+        }
+
+        .mobile-nav-toggle span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .mobile-nav-toggle span:nth-child(1) { top: 0; }
+        .mobile-nav-toggle span:nth-child(2) { top: 9px; }
+        .mobile-nav-toggle span:nth-child(3) { top: 18px; }
+
+        .mobile-nav-toggle.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .mobile-nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-nav-toggle.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
         }
 
         @media (max-width: 768px) {
@@ -571,20 +1005,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#home" style="display: flex; align-items: center; gap: 10px;">
-              <img src="background.svg" alt="AM JIN Logo" style="height: 80px;" />
-              <span style="
-                font-family: 'Playfair Display', 'Poppins', sans-serif;
-                font-size: clamp(20px, 6vw, 30px);
-                letter-spacing: 1.5px;
-                color: #ceb27c;
-                font-weight: 600;
-              ">
-                I AM JIN DESIGNS
-              </span>
+            <a class="navbar-brand" href="#home">
+              <img src="background.svg" alt="AM JIN Logo" class="navbar-logo-img" />
+              <span class="navbar-logo-text">I AM JIN DESIGNS</span>
             </a>
-            <button class="mobile-nav-toggle" onclick="toggleMobileNav()">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
             <ul class="navbar-nav" id="navbarNav">
                 <li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
@@ -596,18 +1024,19 @@
         </div>
     </nav>
 
-    <section id="home" class="hero-slider" style="
-      background-image: url('background-picture.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 100px 0;
-    ">
+    <section id="home" class="hero-slider">
+      <div class="hero-bg-wrap">
+        <div class="hero-bg" id="heroBg" style="background-image: url('background-picture.jpg');"></div>
+      </div>
       <div class="container">
         <div class="hero-content">
-          <h1>We Create Amazing Interior Designs</h1>
-          <p>Transform your space with our innovative interior design solutions. We bring creativity, functionality, and style to every project, creating spaces that reflect your personality and lifestyle.</p>
-          <a href="#projects" class="btn-primary">View Our Works</a>
+          <span class="hero-kicker">Interior Design Studio, Bangalore</span>
+          <h1>From Line to Luxury, We Design Spaces That Feel Like You</h1>
+          <p>Transform your space with thoughtful, personalized interior design. We bring creativity, functionality, and style to every project, crafting rooms that reflect your story.</p>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-primary">View Our Work</a>
+            <a href="https://wa.me/917994535091?text=Hey%2C%20I%27d%20like%20to%20enquire%20about%20your%20interior%20design%20services%20and%20discuss%20a%20potential%20project." target="_blank" rel="noopener noreferrer" class="btn-outline">Book a Consultation</a>
+          </div>
         </div>
       </div>
     </section>
@@ -622,53 +1051,65 @@
       <p>We follow a thoughtful, personalized design journey to bring your dream space to life.</p>
     </div>
 
-    <div class="services-grid">
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">
-          <i class="fas fa-user-check"></i>
+    <div class="process-stepper">
+      <div class="process-step animate-on-scroll">
+        <div class="process-step-marker">
+          <span class="process-step-number"><i class="fas fa-user-check"></i></span>
         </div>
-        <h3>1. Understanding You</h3>
-        <p>We begin by getting to know you—your needs, preferences, lifestyle, and vision for the space. We also study your site, floor plans, budget, and timeline to build the right foundation.</p>
+        <div class="process-step-content">
+          <h3>Understanding You</h3>
+          <p>We begin by getting to know you, your needs, preferences, lifestyle, and vision for the space. We also study your site, floor plans, budget, and timeline to build the right foundation.</p>
+        </div>
       </div>
 
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">
-          <i class="fas fa-drafting-compass"></i>
+      <div class="process-step animate-on-scroll">
+        <div class="process-step-marker">
+          <span class="process-step-number"><i class="fas fa-drafting-compass"></i></span>
         </div>
-        <h3>2. Planning the Layout</h3>
-        <p>Based on our discussions, we create floor plans, furniture layouts, and structural suggestions. We also share a clear design scope and fee for approval.</p>
+        <div class="process-step-content">
+          <h3>Planning the Layout</h3>
+          <p>Based on our discussions, we create floor plans, furniture layouts, and structural suggestions. We also share a clear design scope and fee for approval.</p>
+        </div>
       </div>
 
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">
-          <i class="fas fa-palette"></i>
+      <div class="process-step animate-on-scroll">
+        <div class="process-step-marker">
+          <span class="process-step-number"><i class="fas fa-palette"></i></span>
         </div>
-        <h3>3. Design Concept</h3>
-        <p>We present mood boards, design ideas, and reference images to help you visualize the space. Your feedback helps us refine the concept and estimate the budget.</p>
+        <div class="process-step-content">
+          <h3>Design Concept</h3>
+          <p>We present mood boards, design ideas, and reference images to help you visualize the space. Your feedback helps us refine the concept and estimate the budget.</p>
+        </div>
       </div>
 
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">
-          <i class="fas fa-pencil-ruler"></i>
+      <div class="process-step animate-on-scroll">
+        <div class="process-step-marker">
+          <span class="process-step-number"><i class="fas fa-pencil-ruler"></i></span>
         </div>
-        <h3>4. Design Details</h3>
-        <p>After finalizing the concept, we create technical drawings and a detailed material list covering furniture, electricals, plumbing, and more.</p>
+        <div class="process-step-content">
+          <h3>Design Details</h3>
+          <p>After finalizing the concept, we create technical drawings and a detailed material list covering furniture, electricals, plumbing, and more.</p>
+        </div>
       </div>
 
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">
-          <i class="fas fa-hard-hat"></i>
+      <div class="process-step animate-on-scroll">
+        <div class="process-step-marker">
+          <span class="process-step-number"><i class="fas fa-hard-hat"></i></span>
         </div>
-        <h3>5. Execution & Supervision</h3>
-        <p>Our team supervises the site to ensure timely progress, quality work, and smooth coordination. You stay updated every step of the way.</p>
+        <div class="process-step-content">
+          <h3>Execution &amp; Supervision</h3>
+          <p>Our team supervises the site to ensure timely progress, quality work, and smooth coordination. You stay updated every step of the way.</p>
+        </div>
       </div>
 
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">
-          <i class="fas fa-check-circle"></i>
+      <div class="process-step animate-on-scroll">
+        <div class="process-step-marker">
+          <span class="process-step-number"><i class="fas fa-check-circle"></i></span>
         </div>
-        <h3>6. Final Touch & Handover</h3>
-        <p>We add the final styling, inspect every detail, and hand over a beautiful, finished space—just as you imagined, or even better.</p>
+        <div class="process-step-content">
+          <h3>Final Touch &amp; Handover</h3>
+          <p>We add the final styling, inspect every detail, and hand over a beautiful, finished space, just as you imagined, or even better.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -678,28 +1119,43 @@
 <section id="about" class="about-section">
   <div class="container">
     <div class="about-content">
-      <div class="about-image animate-on-scroll">
-        <img src="about.jpg"
-             alt="Luxury Interior Concept"
-             style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);" />
-      </div>
-
-      <div class="about-text animate-on-scroll" style="max-width: 700px; margin: auto;">
+      <div class="about-text animate-on-scroll">
         <span class="subheading">About Us</span>
-        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Welcome to I AM JIN DESIGNS</h2>
-        <p style="font-size: 1.25rem; font-style: italic; color: #555; margin-bottom: 2rem;">
-          Where every space tells your story.
-        </p>
+        <h2 class="about-tagline">Where every space tells your story.</h2>
 
-        <!-- <p>Welcome to I AM JIN DESIGNS</p> -->
-        <!-- <p>Where every space tells your story</p> -->
-        <p>At I Am Jin Designs we open the door to a world where creativity meets comfort Where your space is reimagined with style soul and substance</p>
-        <p>Founded and run by a passionate designer couple our studio is built on a shared love for interiors and a deep belief in the power of thoughtful design Every project we take on is personal it's not just about how it looks but how it feels</p>
-        <p>Rooted in our philosophy “Line to Luxury” we approach each space as a journey from the first sketch to the final touch Whether you're working with a modest budget or dreaming of luxury we give every detail the same level of dedication creativity and care</p>
-        <p>From contemporary elegance to timeless classics from bold statements to minimalist calm we design to reflect you Trends inspire us but your lifestyle leads the way</p>
-        <p>At I Am Jin Designs we don’t just decorate rooms we craft meaningful spaces with warmth character and a timeless charm you’ll love coming home to</p>
+        <div class="about-slider" id="aboutSlider">
+          <div class="about-slider-row">
+            <button class="about-arrow about-arrow-prev" id="aboutPrev" aria-label="Previous">&#8249;</button>
 
-        <a href="#contact" class="btn-primary" style="margin-top: 1.5rem;">Learn More</a>
+            <div class="about-slide active">
+              <p>At I Am Jin Designs, we open the door to a world where creativity meets comfort. Your space is reimagined with style, soul, and substance.</p>
+            </div>
+            <div class="about-slide">
+              <p>Founded and run by a passionate designer couple, our studio is built on a shared love for interiors and a deep belief in the power of thoughtful design. Every project we take on is personal, it's not just about how it looks, but how it feels.</p>
+            </div>
+            <div class="about-slide">
+              <p>Rooted in our philosophy, "Line to Luxury," we approach each space as a journey from the first sketch to the final touch. Whether you're working with a modest budget or dreaming of luxury, we give every detail the same level of dedication, creativity, and care.</p>
+            </div>
+            <div class="about-slide">
+              <p>From contemporary elegance to timeless classics, from bold statements to minimalist calm, we design to reflect you. Trends inspire us, but your lifestyle leads the way.</p>
+            </div>
+            <div class="about-slide">
+              <p>We don't just decorate rooms, we craft meaningful spaces with warmth, character, and a timeless charm you'll love coming home to.</p>
+            </div>
+
+            <button class="about-arrow about-arrow-next" id="aboutNext" aria-label="Next">&#8250;</button>
+          </div>
+
+          <div class="about-slider-dots">
+            <span class="about-dot active"></span>
+            <span class="about-dot"></span>
+            <span class="about-dot"></span>
+            <span class="about-dot"></span>
+            <span class="about-dot"></span>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary" style="margin-top: 1rem;">Learn More</a>
       </div>
     </div>
   </div>
@@ -714,87 +1170,70 @@
                 <h2>Our Projects</h2>
                 <p>Explore our portfolio of stunning interior design projects that showcase our creativity and expertise.</p>
             </div>
-            <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+            <div class="projects-slider-wrap">
+              <button class="projects-arrow projects-arrow-prev" id="projectsPrev" aria-label="Previous projects">&#8249;</button>
 
-              <!-- Video 2 -->
-              <div class="project-video-card animate-on-scroll" style="text-align: center;">
-                <iframe
-                  src="https://www.youtube.com/embed/b-It8ak5c2w"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  style="width: 100%; height: 200px; border-radius: 12px;">
-                </iframe>
-                <p style="margin-top: 10px; color: #fff;">Minimalist Bedroom Setup</p>
-              </div>
+              <div class="projects-slider">
+                <div class="projects-track" id="projectsTrack">
 
-              <!-- Video 3 -->
-              <div class="project-video-card animate-on-scroll" style="text-align: center;">
-                <iframe
-                  src="https://www.youtube.com/embed/MLGeUhjd7m4"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  style="width: 100%; height: 200px; border-radius: 12px;">
-                </iframe>
-                <p style="margin-top: 10px; color: #fff;">Modern Kitchen Reveal</p>
-              </div>
-
-              <!-- Video 4 -->
-              <div class="project-video-card animate-on-scroll" style="text-align: center;">
-                <iframe
-                  src="https://www.youtube.com/embed/ek6U2YiMFoI"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  style="width: 100%; height: 200px; border-radius: 12px;">
-                </iframe>
-                <p style="margin-top: 10px; color: #fff;">Cozy Workspace Makeover</p>
-              </div>
-
-              <!-- Video 5 -->
-              <div class="project-video-card animate-on-scroll" style="text-align: center;">
-                <iframe
-                  src="https://www.youtube.com/embed/EhBuGDxgDIo"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  style="width: 100%; height: 200px; border-radius: 12px;">
-                </iframe>
-                <p style="margin-top: 10px; color: #fff;">Luxury Bathroom Design</p>
-              </div>
-
-              <!-- Video 6 -->
-              <div class="project-video-card animate-on-scroll" style="text-align: center;">
-                <iframe
-                  src="https://www.youtube.com/embed/Qv1balF9ihE"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  style="width: 100%; height: 200px; border-radius: 12px;">
-                </iframe>
-                <p style="margin-top: 10px; color: #fff;">Luxury Bathroom Design</p>
-              </div>
-
-              <!-- Project 7 -->
-               <div class="project-video-card animate-on-scroll" style="text-align: center; margin-bottom: 30px;">
-                  <div style="position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden;">
-                    <iframe
-                      src="https://www.youtube.com/embed/ZZGRsnjjo5s"
-                      title="Interior Design Short"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                    </iframe>
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/b-It8ak5c2w" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
                   </div>
-                  <p style="margin-top: 12px; color: #fff; font-family: 'Poppins', sans-serif; font-size: 1rem;">
-                    Interior Design Short
-                  </p>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/MLGeUhjd7m4" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/ek6U2YiMFoI" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/EhBuGDxgDIo" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/Qv1balF9ihE" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-h" src="https://www.youtube.com/embed/ZZGRsnjjo5s" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-v" src="https://www.youtube.com/embed/ZdoBNVHEqsc" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-v" src="https://www.youtube.com/embed/jWQowA8mfCc" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
+                  <div class="project-video-card">
+                    <div class="yt-frame">
+                      <iframe class="yt-embed-v" src="https://www.youtube.com/embed/FigPm6KW8ts" title="I Am Jin Designs project" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                    </div>
+                  </div>
+
                 </div>
+              </div>
 
-
-            </div>
+              <button class="projects-arrow projects-arrow-next" id="projectsNext" aria-label="Next projects">&#8250;</button>
             </div>
         </div>
     </section>
@@ -824,46 +1263,64 @@
 
                     </div>
                 </div>
-                <!-- <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div> -->
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <ul style="list-style: none;">
                         <li style="margin-bottom: 1rem;">
-                            <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: #f39c12;"></i>
-                            Amrutha nagar, Choodasandra, Bangalore,560035
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--accent-color);"></i>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Amrutha+nagar%2C+Choodasandra%2C+Bangalore%2C+560035" target="_blank" rel="noopener noreferrer">Amrutha nagar, Choodasandra, Bangalore, 560035</a>
                         </li>
                         <li style="margin-bottom: 1rem;">
-                            <i class="fas fa-phone" style="margin-right: 10px; color: #f39c12;"></i>
-                            7994535091,
-                            9206596084
+                            <i class="fas fa-phone" style="margin-right: 10px; color: var(--accent-color);"></i>
+                            <a href="tel:+917994535091">7994535091</a>,
+                            <a href="tel:+919206596084">9206596084</a>
                         </li>
                         <li>
-                            <i class="fas fa-envelope" style="margin-right: 10px; color: #f39c12;"></i>
-                            mailtovsjithin@gmail.com
+                            <i class="fas fa-envelope" style="margin-right: 10px; color: var(--accent-color);"></i>
+                            <a href="mailto:vsjithin@gmail.com">vsjithin@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 I AM JIN DESIGNS. All rights reserved. | Crafted with passion for beautiful interiors.</p>
+                <p>&copy; 2026 I AM JIN DESIGNS. All rights reserved. Crafted with passion for beautiful interiors.</p>
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/917994535091?text=Hey%2C%20I%27d%20like%20to%20enquire%20about%20your%20interior%20design%20services%20and%20discuss%20a%20potential%20project." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <style>
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-fab:hover {
+            transform: scale(1.08);
+        }
+    </style>
 
     <script>
         // Mobile navigation toggle
         function toggleMobileNav() {
             const nav = document.getElementById('navbarNav');
+            const toggle = document.querySelector('.mobile-nav-toggle');
             nav.classList.toggle('active');
+            toggle.classList.toggle('active');
         }
 
         // Smooth scrolling for navigation links
@@ -879,8 +1336,129 @@
                 }
                 // Close mobile nav after clicking
                 document.getElementById('navbarNav').classList.remove('active');
+                document.querySelector('.mobile-nav-toggle').classList.remove('active');
             });
         });
+
+        // Magnetic tilt hover on project cards
+        document.querySelectorAll('.project-video-card').forEach((card) => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+                const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+                card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Hero background parallax
+        (function () {
+            const heroBg = document.getElementById('heroBg');
+            if (!heroBg) return;
+            window.addEventListener('scroll', () => {
+                const offset = Math.min(window.scrollY * 0.3, 80);
+                heroBg.style.transform = `translateY(${offset}px)`;
+            });
+        })();
+
+        // Projects carousel
+        (function () {
+            const track = document.getElementById('projectsTrack');
+            const prevBtn = document.getElementById('projectsPrev');
+            const nextBtn = document.getElementById('projectsNext');
+            if (!track || !prevBtn || !nextBtn) return;
+
+            const cards = Array.from(track.children);
+            let index = 0;
+
+            function cardsPerView() {
+                const w = window.innerWidth;
+                if (w <= 768) return 1;
+                if (w <= 1024) return 2;
+                return 3;
+            }
+
+            function maxIndex() {
+                return Math.max(0, cards.length - cardsPerView());
+            }
+
+            function update() {
+                const cardWidth = cards[0].getBoundingClientRect().width;
+                const gap = parseFloat(getComputedStyle(track).gap) || 0;
+                track.style.transform = `translateX(-${index * (cardWidth + gap)}px)`;
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index >= maxIndex();
+            }
+
+            prevBtn.addEventListener('click', () => {
+                index = Math.max(0, index - 1);
+                update();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                index = Math.min(maxIndex(), index + 1);
+                update();
+            });
+
+            window.addEventListener('resize', () => {
+                index = Math.min(index, maxIndex());
+                update();
+            });
+
+            update();
+        })();
+
+        // About section text slider
+        (function () {
+            const slider = document.getElementById('aboutSlider');
+            if (!slider) return;
+            const slides = slider.querySelectorAll('.about-slide');
+            const dots = slider.querySelectorAll('.about-dot');
+            const prevBtn = document.getElementById('aboutPrev');
+            const nextBtn = document.getElementById('aboutNext');
+            let current = 0;
+            let timer;
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            function next() {
+                goTo(current + 1);
+            }
+
+            function prev() {
+                goTo(current - 1);
+            }
+
+            function start() {
+                timer = setInterval(next, 7000);
+            }
+
+            function stop() {
+                clearInterval(timer);
+            }
+
+            function restart() {
+                stop();
+                start();
+            }
+
+            dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); restart(); }));
+            nextBtn.addEventListener('click', () => { next(); restart(); });
+            prevBtn.addEventListener('click', () => { prev(); restart(); });
+            slider.addEventListener('mouseenter', stop);
+            slider.addEventListener('mouseleave', start);
+            start();
+        })();
 
         // Scroll animations
         const observerOptions = {
@@ -892,6 +1470,8 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
                 }
             });
         }, observerOptions);
@@ -905,17 +1485,19 @@
 
         // Active navigation state
         window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section, footer');
             const navItems = document.querySelectorAll('.nav-item');
+            const reachedBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2);
 
-            let current = '';
+            let current = sections[0].getAttribute('id');
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
+                if (scrollY >= (section.offsetTop - 200)) {
                     current = section.getAttribute('id');
                 }
             });
+            if (reachedBottom) {
+                current = sections[sections.length - 1].getAttribute('id');
+            }
 
             navItems.forEach(item => {
                 item.classList.remove('active');
@@ -944,6 +1526,7 @@
 
             if (!nav.contains(e.target) && !toggle.contains(e.target)) {
                 nav.classList.remove('active');
+                toggle.classList.remove('active');
             }
         });
     </script>
